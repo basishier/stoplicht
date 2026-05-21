@@ -1,41 +1,56 @@
 input.onButtonPressed(Button.A, function () {
+    Kitronik_STOPbit.trafficLightState(Kitronik_STOPbit.LightStates.Go)
     basic.showLeds(`
         . . # . .
-        . # # # .
-        # . # . #
+        . # . . .
+        # # # # #
+        . # . . .
+        . . # . .
+        `)
+    basic.pause(5000)
+    Kitronik_STOPbit.trafficLightState(Kitronik_STOPbit.LightStates.ReadyToStop)
+    basic.showLeds(`
+        . . # . .
+        . . # . .
+        . . # . .
         . . # . .
         . . # . .
         `)
-    basic.pause(3000)
-    basic.clearScreen()
+    basic.pause(5000)
+    Kitronik_STOPbit.trafficLightState(Kitronik_STOPbit.LightStates.Stop)
+    basic.showLeds(`
+        # . . . #
+        . # . # .
+        . . # . .
+        . # . # .
+        # . . . #
+        `)
 })
 input.onButtonPressed(Button.B, function () {
+    Kitronik_STOPbit.trafficLightState(Kitronik_STOPbit.LightStates.Go)
     basic.showLeds(`
         . . # . .
-        . # # # .
-        # . # . #
+        . # . . .
+        # # # # #
+        . # . . .
+        . . # . .
+        `)
+    basic.pause(5000)
+    Kitronik_STOPbit.trafficLightState(Kitronik_STOPbit.LightStates.ReadyToStop)
+    basic.showLeds(`
+        . . # . .
+        . . # . .
+        . . # . .
         . . # . .
         . . # . .
         `)
-    basic.pause(3000)
-    basic.clearScreen()
-})
-basic.forever(function () {
-    if (input.buttonIsPressed(Button.A) || input.buttonIsPressed(Button.B)) {
-        basic.showLeds(`
-            # . . . #
-            . # . # .
-            . . # . .
-            . # . # .
-            # . . . #
-            `)
-    } else {
-        basic.showLeds(`
-            # . . . #
-            . # . # .
-            . . # . .
-            . # . # .
-            # . . . #
-            `)
-    }
+    basic.pause(5000)
+    Kitronik_STOPbit.trafficLightState(Kitronik_STOPbit.LightStates.Stop)
+    basic.showLeds(`
+        # . . . #
+        . # . # .
+        . . # . .
+        . # . # .
+        # . . . #
+        `)
 })
